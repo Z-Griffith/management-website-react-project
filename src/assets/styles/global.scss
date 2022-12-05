@@ -1,0 +1,19 @@
+$color: pink;
+body{
+    background-color: $color;
+    user-select: none; // 禁用文字选中
+}
+img{
+    -webkit-user-drag: none; //禁止拖动图片
+}
+
+// 首页的布局样式
+.logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(0,47,167,1);
+}
+.site-layout .site-layout-background {
+    background: rgb(255, 255, 255);
+}
+
