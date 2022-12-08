@@ -14,11 +14,19 @@ import App from './App'
 import { BrowserRouter } from "react-router-dom"
 // import Router from "./router"
 
+
+// 状态管理的
+import { Provider } from "react-redux"
+import store from "@/store"
+
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  // <React.StrictMode>
-    // {/* <Router/> */}
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  // </React.StrictMode>
+  <Provider store={store}>
+    {/* // <React.StrictMode>
+      // <Router/> */}
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    {/* // </React.StrictMode> */}
+  </Provider>
 )
