@@ -3,16 +3,35 @@ const Store={
         // 数据放置区域
         num:20
     },
-    actions:{
+    actions:{ // 此处只放同步的方法
         // 方法放置区域
-        add1(newState:{num:number}, action:{type:string, val:number}){
-            newState.num++
+        add1(newState:{num:number}, action:{type:string}){
+            newState.num ++;
+            
         },
         add2(newState:{num:number}, action:{type:string, val:number}){
-            newState.num+=action.val
+                       //做异步 
+            newState.num += action.val;
+            // newState.num+=action.val
+            // setTimeout(() => {
+            //     newState.num++
+            // }, 1000)
         },
         // add3(newSta)
     },
+    // 优化redux-thunk的异部写法（模仿VueX写法 )
+    // asyncActions
+
+    asyncActions:{
+        asyncAdd1(dispatch:Function){
+            setTimeout(()=>{
+                dispatch({type:"add1"})
+            }, 1000)
+        }
+
+    },
+
+
     // 名字统一管理
     // add1:"add1",
     // add2:"add2"
